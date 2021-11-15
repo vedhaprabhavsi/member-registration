@@ -1,0 +1,8 @@
+com\cognizant\memberregistration\service\MemberSequenceGenerator.class
+com\cognizant\memberregistration\model\Member.class
+com\cognizant\memberregistration\service\MemberService.class
+com\cognizant\memberregistration\controller\MemberController.class
+com\cognizant\memberregistration\model\Dependent.class
+com\cognizant\memberregistration\repository\MemberRepository.class
+com\cognizant\memberregistration\MemberRegistrationApplication.class
+com\cognizant\memberregistration\model\MemberDbSequence.class

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MemberService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">member-registration</a> &gt; <a href="index.source.html" class="el_package">com.cognizant.memberregistration.service</a> &gt; <span class="el_source">MemberService.java</span></div><h1>MemberService.java</h1><pre class="source lang-java linenums">package com.cognizant.memberregistration.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cognizant.memberregistration.model.Member;
+import com.cognizant.memberregistration.repository.MemberRepository;
+
+
+@Service
+<span class="fc" id="L13">public class MemberService {</span>
+	
+	@Autowired
+	private MemberRepository repo;
+	
+	public Member create(Member member){
+<span class="fc" id="L19">		return repo.save(member);</span>
+	}
+	
+	public List&lt;Member&gt; getAll(){
+<span class="fc" id="L23">		return repo.findAll();</span>
+	}
+	
+	public Member getMember(String memberId){
+<span class="fc" id="L27">		return repo.findByMemberId(memberId);</span>
+	}
+	
+	public Member getMemberDependent(String memberId){
+<span class="nc" id="L31">		return repo.findByMemberDependentId(memberId);</span>
+	}
+	
+	public Member update(Member member){
+<span class="nc" id="L35">		Member m = repo.findByMemberId(member.getMemberId());</span>
+<span class="nc" id="L36">		m.setName(member.getName());</span>
+<span class="nc" id="L37">		m.setAddress(member.getAddress());</span>
+<span class="nc" id="L38">		m.setCountry(member.getCountry());</span>
+<span class="nc" id="L39">		m.setState(member.getState());</span>
+<span class="nc" id="L40">		m.setEmail(member.getEmail());</span>
+<span class="nc" id="L41">		m.setPan(member.getPan());</span>
+<span class="nc" id="L42">		m.setContactNum(member.getContactNum());</span>
+<span class="nc" id="L43">		m.setDob(member.getDob());</span>
+<span class="nc" id="L44">		m.setRegDate(member.getRegDate());</span>
+<span class="nc" id="L45">		m.setAge(member.getAge());</span>
+<span class="nc" id="L46">		return repo.save(m);</span>
+		
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

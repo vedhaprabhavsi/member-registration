@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Member.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">member-registration</a> &gt; <a href="index.source.html" class="el_package">com.cognizant.memberregistration.model</a> &gt; <span class="el_source">Member.java</span></div><h1>Member.java</h1><pre class="source lang-java linenums">package com.cognizant.memberregistration.model;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
+public class Member {
+	
+	@Transient
+	public static final String SEQUENCE_NAME=&quot;member_sequence&quot;;
+	
+	@Id
+	private String memberId;
+	private String name;
+	private String address; 
+	private String country;
+	private String state;
+	private String email;
+	private String pan;
+	private Long contactNum;
+	private Date dob;
+	private Date regDate;
+	private int age;
+	
+	private List&lt;Dependent&gt; dependent;
+
+	public Member() {
+<span class="nc" id="L32">		super();</span>
+<span class="nc" id="L33">	}</span>
+
+	public List&lt;Dependent&gt; getDependent() {
+<span class="nc" id="L36">		return dependent;</span>
+	}
+
+
+
+	public void setDependent(List&lt;Dependent&gt; dependent) {
+<span class="nc" id="L42">		this.dependent = dependent;</span>
+<span class="nc" id="L43">	}</span>
+
+
+
+	public String getMemberId() {
+<span class="nc" id="L48">		return memberId;</span>
+	}
+
+	public void setMemberId(String memberId) {
+<span class="nc" id="L52">		this.memberId = memberId;</span>
+<span class="nc" id="L53">	}</span>
+
+	public String getName() {
+<span class="nc" id="L56">		return name;</span>
+	}
+
+	public void setName(String name) {
+<span class="nc" id="L60">		this.name = name;</span>
+<span class="nc" id="L61">	}</span>
+
+	public String getAddress() {
+<span class="nc" id="L64">		return address;</span>
+	}
+
+	public void setAddress(String address) {
+<span class="nc" id="L68">		this.address = address;</span>
+<span class="nc" id="L69">	}</span>
+
+	public String getCountry() {
+<span class="nc" id="L72">		return country;</span>
+	}
+
+	public void setCountry(String country) {
+<span class="nc" id="L76">		this.country = country;</span>
+<span class="nc" id="L77">	}</span>
+
+	public String getState() {
+<span class="nc" id="L80">		return state;</span>
+	}
+
+	public void setState(String state) {
+<span class="nc" id="L84">		this.state = state;</span>
+<span class="nc" id="L85">	}</span>
+
+	public String getEmail() {
+<span class="nc" id="L88">		return email;</span>
+	}
+
+	public void setEmail(String email) {
+<span class="nc" id="L92">		this.email = email;</span>
+<span class="nc" id="L93">	}</span>
+
+	public String getPan() {
+<span class="nc" id="L96">		return pan;</span>
+	}
+
+	public void setPan(String pan) {
+<span class="nc" id="L100">		this.pan = pan;</span>
+<span class="nc" id="L101">	}</span>
+
+	public Long getContactNum() {
+<span class="nc" id="L104">		return contactNum;</span>
+	}
+
+	public void setContactNum(Long contactNum) {
+<span class="nc" id="L108">		this.contactNum = contactNum;</span>
+<span class="nc" id="L109">	}</span>
+
+	public Date getDob() {
+<span class="nc" id="L112">		return dob;</span>
+	}
+
+	public void setDob(Date dob) {
+<span class="nc" id="L116">		this.dob = dob;</span>
+<span class="nc" id="L117">	}</span>
+
+	public Date getRegDate() {
+<span class="nc" id="L120">		return regDate;</span>
+	}
+
+	public void setRegDate(Date regDate) {
+<span class="nc" id="L124">		this.regDate = regDate;</span>
+<span class="nc" id="L125">	}</span>
+
+	public int getAge() {
+<span class="nc" id="L128">		return age;</span>
+	}
+
+	public void setAge(int age) {
+<span class="nc" id="L132">		this.age = age;</span>
+<span class="nc" id="L133">	}</span>
+
+	@Override
+	public String toString() {
+<span class="nc" id="L137">		return &quot;Member [memberId=&quot; + memberId + &quot;, name=&quot; + name + &quot;, address=&quot; + address + &quot;, country=&quot; + country</span>
+				+ &quot;, state=&quot; + state + &quot;, email=&quot; + email + &quot;, pan=&quot; + pan + &quot;, contactNum=&quot; + contactNum + &quot;, dob=&quot;
+				+ dob + &quot;, regDate=&quot; + regDate + &quot;, age=&quot; + age + &quot;, dependent=&quot; + dependent + &quot;]&quot;;
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
